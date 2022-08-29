@@ -19,30 +19,37 @@ function signup() {
     let Email = document.getElementById('Emailbox').value;
     let Password = document.getElementById('Passwordbox').value;
     let confirm = document.getElementById('ConfirmPasswordbox').value
+    let currentDate = new Date();
+    let cDay = currentDate.getDate();
+    let cMonth = currentDate.getMonth() + 1;
+    let cYear = currentDate.getFullYear();
+    let date = cDay + "/" + cMonth + "/" + cYear 
     
     let user = {
         Name :  Name,
         Surname : Surname,
         Role: role,
         Email : Email,
-        Phone_Number:PhoneNumber,
-        Password : Password
+        PhoneNumber: PhoneNumber,
+        Password : Password,
+        Date : date
     
     }
 
     
 
-    // Add multple objects in the array
-    dataList = JSON.parse(localStorage.getItem('accounts'))
-   if (dataList != null) {
-     accountlist = dataList;
-     accountlist.push(user);
-   }else{
-    accountlist.push(user);
-   }
-   // Storing Local Storage
-    localStorage.setItem("accounts",JSON.stringify(accountlist))
+   
     if (confirm === Password) {
+       // Add multple objects in the array
+      dataList = JSON.parse(localStorage.getItem('accounts'))
+      if (dataList != null) {
+        accountlist = dataList;
+        accountlist.push(user);
+      }else{
+            accountlist.push(user);
+      }
+      // Storing Local Storage
+      localStorage.setItem("accounts",JSON.stringify(accountlist))
       window.open('login.html', '_self')
     } else {
       alert("Password are no matching")
