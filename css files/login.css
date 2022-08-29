@@ -27,7 +27,7 @@ button{
 li{
     display: inline-block;
 }
-#role2> li >a >img{
+#role2> li >img{
     width: 100px;
     height: 100px;
 }
