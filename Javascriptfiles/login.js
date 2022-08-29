@@ -21,13 +21,11 @@ function login() {
                siginDate = user[i].Date
                localStorage.setItem('signinuser', JSON.stringify({signinName , siginSurname , signinrole ,signinphoneNumber, signinEmail , signinPassword , siginDate}));
                window.open('home.html', '_self')
-           break ;
-          
-        }else{
-          invaild = false
+             return invaild =true; 
         }
+          
       }
-    if (invaild===false) {
+    if (invaild!==true) {
     
         alert("Account not registered")
     }

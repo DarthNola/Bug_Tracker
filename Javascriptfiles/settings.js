@@ -26,16 +26,64 @@ function updateItem() {
     }
 
     let main =JSON.parse(localStorage.getItem('accounts'));
+    
     for (let i = 0; i < main.length; i++) {
         if (user.signinEmail===main[i].Email) {
-            main[i].push(updateUser)
+            
+            main[i]= updateUser
+            signinName = main[i].Name 
+            siginSurname = main[i].Surname
+            signinrole =  main[i].Role
+            signinphoneNumber = main[i].PhoneNumber
+            signinEmail   = main[i].Email
+            signinPassword = main[i].Password
+            siginDate = main[i].Date
+            localStorage.setItem('signinuser', JSON.stringify({signinName , siginSurname , signinrole ,signinphoneNumber, signinEmail , signinPassword , siginDate}));
+              
             
         }
 
         
     }
+    localStorage.setItem("accounts",JSON.stringify(main))
+    window.open('settings.html', '_self')
     
 }
+
+updatebtn.addEventListener('click',updateItem );
+console.log(localStorage.getItem('accounts'))
 function deleteItem() {
+    let main =JSON.parse(localStorage.getItem('accounts'));
+    
+    
+    
+    for (let i = 0; i < main.length; i++) {
+        if (user.signinEmail===main[i].Email) {
+            
+            main[i]  = null
+            
+              
+            
+        }
+
+        
+    }
+    function isnotNull(value) { 
+        if (value !==null) {
+            return value
+            
+        }
+    } 
+
+    let mains = main.filter(isnotNull)
+    localStorage.setItem("accounts",JSON.stringify(mains))
+    window.open('login.html', '_self')
+    
     
 }
+function opensettings(){
+    window.open('settings.html', '_self')
+}
+yesbtn.addEventListener('click' , deleteItem)
+nobtn.addEventListener('click' , opensettings)
+
