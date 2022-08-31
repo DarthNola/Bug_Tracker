@@ -106,7 +106,7 @@ body{
 .list-group-item.active:not(.disabled) {
     border-color: #e7e7e7;
     background: #fff;
-    color: #ac32e4;
+    color: rgb(31, 121, 224);
     cursor: default;
     pointer-events: none;
 }
@@ -162,7 +162,7 @@ a.list-group-item, .list-group-item-action {
     border: 1px solid rgba(0,0,0,0.125);
 }
 .list-group-item.active:not(.disabled)::before {
-    background-color: #ac32e4;
+    background-color: rgb(31, 121, 224);
 }
 
 .list-group-item::before {

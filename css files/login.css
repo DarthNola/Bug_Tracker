@@ -13,10 +13,10 @@ body{
   margin-bottom: 5em;
 }
 header{
-    color: rgb(187, 187, 187);
+    color: rgb(239, 239, 239);
     font-size: 3em;
     text-align: center;
-    background-color: cornflowerblue;
+    background-color: rgb(31, 121, 224);
     border-radius: 0.5em;;
     align-self: center;
     grid-area: head;
@@ -27,15 +27,20 @@ header{
 #loginblock{
     grid-area: block;
     text-align: center;
-    border-radius: 3.5%;
+    border-radius: 1.5em;
     color: rgb(187, 187, 187);
     background-color: rgb(88, 88, 88);
     align-content: center;
     
 }
+#login{
+    width: 100px;
+    align-self: auto;
+    text-decoration: none;
+}
 input{
-    padding: 0.2em;
-    margin-top: 0.5em;
+    padding: 0.4em;
+    margin-top: 1em;
 }
 button{
     width: 200px;
@@ -43,6 +48,10 @@ button{
     padding-top: 0.5em;
     padding-bottom: 0.5em;
     margin-top: 0.5em;
+    
+}
+button:hover{
+    color: rgb(31, 121, 224);
 }
 
 #role{
@@ -51,11 +60,17 @@ button{
 }
 li{
     display: inline-block;
+    margin-right: 1em;
 }
 #role2> li >img{
     width: 100px;
     height: 100px;
 }
 #role2> li:hover{
-    background: green;
+    background:  rgb(31, 121, 224);
+    border-radius: 1em;
 }
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; } 
